@@ -8,7 +8,6 @@ export default class entahNamaDariClassKurangPenting {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 5000,
             timerProgressBar: false,
             showCloseButton: true,
         }).fire();
