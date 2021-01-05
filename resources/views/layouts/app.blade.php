@@ -8,9 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title id="title-page">{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="/css/app.css">
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="/js/app.js " defer></script>
     <link rel="stylesheet" media="screen, print" href="/admin/assets/vendors/css/vendor.bundle.css">
     <link rel="stylesheet" media="screen, print" href="/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" media="screen, print" href="/admin/assets/css/style.css">
