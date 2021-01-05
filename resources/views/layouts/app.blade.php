@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title id="title-page">{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Scripts -->
@@ -31,6 +31,16 @@
             cursor: pointer;
             user-select:none;
         }
+        .nav-link.router-link-exact-active.router-link-active>.menu-title{
+            color:#b66dff !important;
+        }
+        .router-link-exact-active.router-link-active{
+            color:#b66dff !important;
+        }
+
+        .animate__faster{
+              --animate-duration:300ms;
+        }
     </style>
 </head>
 
@@ -44,6 +54,7 @@
                     <div class="content-wrapper">
                         @include('inc.pesan')
                         <router-view></router-view>
+                        <vue-progress-bar></vue-progress-bar>
                     </div>
                 </div>
             </div>

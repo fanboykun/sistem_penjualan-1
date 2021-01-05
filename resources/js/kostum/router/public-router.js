@@ -1,21 +1,19 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
-
-
-
-let routes=[
+let data=[
 	{ path: '/', component: require('../../../vue-views/produk/index.vue').default },
-	{ path: '/index', component: require('../../../vue-views/index.vue').default },
-	{ path: '/login', component: require('../../../vue-views/login.vue').default },
-	{ path: '/*', component: require('../../../vue-views/404.vue').default },
 ]
 
-const route = new VueRouter({
-	mode: 'history',
-	routes 
-});
+
+if (window.user) {
+	data.push(
+		{ path: '/pengaturan', component: require('../../../vue-views/onlogin/pengaturan.vue').default },
+		{ path: '/profil', component: require('../../../vue-views/onlogin/profile.vue').default },
+		{ path: '/transaksi/', component: require('../../../vue-views/onlogin/transaksi/index.vue').default },
+		{ path: '/transaksi/:kd_transaksi', component: require('../../../vue-views/onlogin/transaksi/detail.vue').default },
+	)
+}
 
 
+let notFound={ path: '/*', component: require('../../../vue-views/404.vue').default };
+data.push(notFound)
 
-export default route; 
+export default data;

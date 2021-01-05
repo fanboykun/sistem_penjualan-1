@@ -35,13 +35,30 @@
                                 <div class="form-group">
                                     <label for="">Password</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control form-control-sm" v-model="form.password">
+                                        <input
+                                        type="password"
+                                        id="password"
+                                        class="form-control form-control-sm" 
+                                        v-model="form.password">
                                         <span class="input-group-prepend">
-                                            <button class="btn btn-sm als round-right">
+                                            <button class="btn btn-sm als round-right"
+                                            @click="show_password"
+                                            type="button">
                                                 <i class="fa fa-eye"></i>
                                             </button>
                                         </span>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <vue-recaptcha 
+                                    :sitekey="$captKey"  
+                                    class="g-recaptcha" 
+                                    ref="recaptcha"
+                                    @verify="onCaptchaVerified"
+                                    @expired="onCaptchaExpired"
+                                    >
+                                        
+                                    </vue-recaptcha>
                                 </div>
                                 <div class="form-group">
                                     <button class=" btn btn-primary btn-block">
@@ -65,14 +82,19 @@
 </template>
 <script>
 import registrasiComp from './registrasi';
+import VueRecaptcha from 'vue-recaptcha';
+
 export default {
     components: {
-        registrasiComp
+        registrasiComp,
+        VueRecaptcha
     },
     data() {
         return {
+            captcha:false,
             registrasi: false,
             telah_registrasi: false,
+            typeInput: false,
             form: new Form({
                 username: '',
                 password: '',
@@ -90,9 +112,51 @@ export default {
 
     },
     methods: {
-        login() {
+        login(){
+            if (this.captcha) {
+                this.$toast.df102();
+                    this.form.post('/login')
+                    .then(()=>{
+                        this.$toast.df200();
+                        window.location='profil'
+                    })
+                    .catch((e)=>{
+                        if (e.response.status == 500) {
+                            return this.$toast.df500();
+                        }
+                        if (e.response.status == 422) {
+                            return Swal.fire({
+                                icon:'warning',
+                                title:'Tidak ditemukan',
+                                text:'Kombinasi Username & Password tidak dikenal'
+                            })
+                        }
 
-        }
+                    })
+            }else{
+                Swal.fire({
+                    icon:"warning",
+                    title:'Kesalahan',
+                    text:'Captcha tidak benar'
+                })
+            }
+
+        },
+        show_password(){
+            this.typeInput = !this.typeInput;
+            let password=document.getElementById("password");
+            if (this.typeInput) {
+                password.setAttribute('type','text')
+            }else{
+                password.setAttribute('type','password')
+            }
+        },
+        onCaptchaVerified(recaptchaToken) {
+           this.captcha=true;
+        },  
+        onCaptchaExpired(recaptchaToken) {
+           this.captcha=false;
+        },  
     },
 }
 

@@ -25,4 +25,16 @@ export default class entahNamaDariClassKurangPenting {
             timerProgressBar: true,
         }).fire();
     }
+
+    df500() {
+        Swal.mixin({
+            title: 'Terjadi Kelas Server .. ',
+            icon: 'warning',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+        }).fire();
+    }
 }

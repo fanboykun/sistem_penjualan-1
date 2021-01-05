@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Repositories\autentikasiRepos;
 use Illuminate\Http\Request;
+use App\User;
 
 class autentikasiController extends Controller
 {
@@ -25,9 +26,15 @@ class autentikasiController extends Controller
     	]);
     }
 
-    public function registrasiAutentikasi(Request $request)
+    public function store(Request $request)
     {
     	$this->validasiInput($request);
-    	return $this->autentikasiRepos->store($request);
+    	return $this->autentikasiRepos->registrasiAutentikasi($request);
+    }
+
+    public function index()
+    {
+        $this->authorize('admin');
+        return User::get();
     }
 }

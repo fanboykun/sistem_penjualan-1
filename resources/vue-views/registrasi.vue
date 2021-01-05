@@ -110,8 +110,8 @@ export default {
                     nv.$emit('telah_registrasi');
                 })
                 .catch((e) => {
-                    if (e.responsese.status == 500) {
-                        this.$toast.df500();    
+                    if (e.response.status == 500) {
+                        return this.$toast.df500();    
                     }
                 })
         },

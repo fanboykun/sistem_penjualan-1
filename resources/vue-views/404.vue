@@ -16,7 +16,7 @@
         mounted() {
             console.log('Component mounted.')
         },
-        method(){
+        methods:{
 
         },
     }

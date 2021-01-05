@@ -20,7 +20,7 @@ class User extends Authenticatable
     use Notifiable,HasApiTokens;
 
     public $keyType="string";
-    public $primaryKey='kd_user';
+    public $primaryKey="kd_user";
     /**
      * The attributes that are mass assignable.
      *

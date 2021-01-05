@@ -26,11 +26,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         Gate::define('admin',function($user){
-            return $user->akses === 5;
+            return $user->akses == 5;
         });
 
         Gate::define('user',function($user){
-            return $user->akses === 1;
+            return $user->akses == 'client';
         });
 
 
