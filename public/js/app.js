@@ -4558,6 +4558,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.varProduk = data.varProduk;
         _this2.varKategori = data.varKategori;
         _this2.hide_loadMore = false;
+
+        _this2.cek_hide(_this2.varProduk, data);
       })["catch"](function (e) {
         _this2.$Progress.fail();
 
@@ -4654,11 +4656,7 @@ __webpack_require__.r(__webpack_exports__);
         _this5.modePencarian = true;
         _this5.varProduk = data.varProduk;
 
-        if (_this5.varProduk.data.length == data.varProduk.total) {
-          _this5.hide_loadMore = true;
-        } else {
-          _this5.hide_loadMore = false;
-        }
+        _this5.cek_hide(_this5.varProduk, data);
       })["catch"](function (e) {
         _this5.$error["catch"](e);
       });
@@ -4671,6 +4669,13 @@ __webpack_require__.r(__webpack_exports__);
       this.modePencarian = false;
       this.modeFilter = false;
       this.load();
+    },
+    cek_hide: function cek_hide(varProduk, data) {
+      if (varProduk.data.length == data.varProduk.total) {
+        this.hide_loadMore = true;
+      } else {
+        this.hide_loadMore = false;
+      }
     }
   }
 });

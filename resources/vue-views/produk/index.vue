@@ -130,6 +130,7 @@ export default {
                     this.varProduk = data.varProduk
                     this.varKategori = data.varKategori
                     this.hide_loadMore = false
+                    this.cek_hide(this.varProduk,data)
                 })
                 .catch((e) => {
                     this.$Progress.fail();
@@ -212,12 +213,8 @@ export default {
                 this.load_page = 1;
                 this.modePencarian=true;
                 this.varProduk=data.varProduk
-
-                if (this.varProduk.data.length == data.varProduk.total) {
-                    this.hide_loadMore = true
-                }else{
-                    this.hide_loadMore = false;
-                }
+                this.cek_hide(this.varProduk,data)
+                
             })
             .catch((e)=>{
                 this.$error.catch(e);
@@ -232,8 +229,15 @@ export default {
             this.modePencarian=false;
             this.modeFilter=false;
             this.load();
-        }
+        },
 
+        cek_hide(varProduk,data){
+            if (varProduk.data.length == data.varProduk.total) {
+                this.hide_loadMore = true
+            }else{
+                this.hide_loadMore = false;
+            }            
+        }
 
 
     },
