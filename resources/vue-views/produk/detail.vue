@@ -15,13 +15,13 @@
 			<div class="col-sm" >
 				<carousel :per-page="1"  :mouse-drag="true" :autoplay='true' :touchDrag='true' >
 				    <slide v-if=" produk.img_1">
-				        <img  :src="'produk/'+ produk.img_1" class="w-100">
+				        <img  :src="'/produk/'+ produk.img_1" class="w-100">
 				    </slide>
 				    <slide v-if="produk.img_2"> 
-				        <img  :src="'produk/'+ produk.img_2" class="w-100">
+				        <img  :src="'/produk/'+ produk.img_2" class="w-100">
 				    </slide>
 				    <slide v-if="produk.img_3">
-				        <img  :src="'produk/'+ produk.img_3" class="w-100">
+				        <img  :src="'/produk/'+ produk.img_3" class="w-100">
 				    </slide>
 				</carousel>
 			</div>

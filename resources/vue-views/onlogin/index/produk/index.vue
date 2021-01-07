@@ -114,13 +114,13 @@
                         <div class="m-1 ">
                             <carousel :per-page="1"  :mouse-drag="true" :autoplay='true' :touchDrag='true' :loop="true" :paginationPadding="0">
                                 <slide> 
-                                    <img  :src="'produk/'+ detail_produk.img_1" class="w-100">
+                                    <img  :src="'/produk/'+ detail_produk.img_1" class="w-100">
                                 </slide>
                                 <slide v-if="detail_produk.img_2">
-                                    <img  :src="'produk/'+ detail_produk.img_2" class="w-100">
+                                    <img  :src="'/produk/'+ detail_produk.img_2" class="w-100">
                                 </slide>
                                 <slide v-if=" detail_produk.img_3">
-                                    <img  :src="'produk/'+ detail_produk.img_3" class="w-100">
+                                    <img  :src="'/produk/'+ detail_produk.img_3" class="w-100">
                                 </slide>
                             </carousel>
                         </div>

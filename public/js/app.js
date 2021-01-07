@@ -69864,7 +69864,7 @@ var render = function() {
                               _c("img", {
                                 staticClass: "w-100",
                                 attrs: {
-                                  src: "produk/" + _vm.detail_produk.img_1
+                                  src: "/produk/" + _vm.detail_produk.img_1
                                 }
                               })
                             ]),
@@ -69874,7 +69874,7 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "w-100",
                                     attrs: {
-                                      src: "produk/" + _vm.detail_produk.img_2
+                                      src: "/produk/" + _vm.detail_produk.img_2
                                     }
                                   })
                                 ])
@@ -69885,7 +69885,7 @@ var render = function() {
                                   _c("img", {
                                     staticClass: "w-100",
                                     attrs: {
-                                      src: "produk/" + _vm.detail_produk.img_3
+                                      src: "/produk/" + _vm.detail_produk.img_3
                                     }
                                   })
                                 ])
@@ -72903,7 +72903,7 @@ var render = function() {
                 ? _c("slide", [
                     _c("img", {
                       staticClass: "w-100",
-                      attrs: { src: "produk/" + _vm.produk.img_1 }
+                      attrs: { src: "/produk/" + _vm.produk.img_1 }
                     })
                   ])
                 : _vm._e(),
@@ -72912,7 +72912,7 @@ var render = function() {
                 ? _c("slide", [
                     _c("img", {
                       staticClass: "w-100",
-                      attrs: { src: "produk/" + _vm.produk.img_2 }
+                      attrs: { src: "/produk/" + _vm.produk.img_2 }
                     })
                   ])
                 : _vm._e(),
@@ -72921,7 +72921,7 @@ var render = function() {
                 ? _c("slide", [
                     _c("img", {
                       staticClass: "w-100",
-                      attrs: { src: "produk/" + _vm.produk.img_3 }
+                      attrs: { src: "/produk/" + _vm.produk.img_3 }
                     })
                   ])
                 : _vm._e()
@@ -73246,7 +73246,7 @@ var render = function() {
                         _c("div", { staticClass: "m-1 " }, [
                           _c("img", {
                             staticClass: "w-100",
-                            attrs: { src: "produk/" + produk.img_1 }
+                            attrs: { src: "/produk/" + produk.img_1 }
                           })
                         ]),
                         _vm._v(" "),
@@ -89679,7 +89679,6 @@ var entahNamaDariClassKurangPenting = /*#__PURE__*/function () {
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
-        timer: 5000,
         timerProgressBar: false,
         showCloseButton: true
       }).fire();

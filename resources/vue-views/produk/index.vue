@@ -53,7 +53,7 @@
                     <div class="col-md-4" v-for="produk in varProduk.data">
                         <div class="card m-2">
                             <div class="m-1 ">
-                                <img :src="'produk/'+ produk.img_1" class="w-100">
+                                <img :src="'/produk/'+ produk.img_1" class="w-100">
                             </div>
                             <div class="p-3">
                                 <h4> {{produk.nama}} </h4>
