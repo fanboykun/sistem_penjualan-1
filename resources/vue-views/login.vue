@@ -118,7 +118,7 @@ export default {
                     this.form.post('/login')
                     .then(()=>{
                         this.$toast.df200();
-                        window.location='profil'
+                        window.location='/'
                     })
                     .catch((e)=>{
                         if (e.response.status == 500) {

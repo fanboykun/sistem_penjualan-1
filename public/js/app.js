@@ -2204,7 +2204,7 @@ __webpack_require__.r(__webpack_exports__);
         this.form.post('/login').then(function () {
           _this2.$toast.df200();
 
-          window.location = 'profil';
+          window.location = '/';
         })["catch"](function (e) {
           if (e.response.status == 500) {
             return _this2.$toast.df500();
