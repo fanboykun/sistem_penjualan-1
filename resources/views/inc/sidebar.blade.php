@@ -10,7 +10,7 @@
             <div class="collapse" id="admin_panel">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <router-link class="nav-link" to="/index-user">Index User</router-link>
+                        {{-- <router-link class="nav-link" to="/index-user">Index User</router-link>  --}}
                     </li>
                     <li class="nav-item"> 
                         <router-link class="nav-link" to="/index-produk">Index Produk</router-link>
@@ -43,18 +43,18 @@
                 <i class="fa fa-money menu-icon"></i>
             </router-link>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <router-link class="nav-link " to="/pengaturan">
                 <span class="menu-title text-dark">Pengaturan</span>
                 <i class="fa fa-cog menu-icon"></i>
             </router-link>
-        </li>
-        <li class="nav-item">
+        </li> --}}
+        {{-- <li class="nav-item">
             <router-link class="nav-link " to="/profil">
-                <span class="menu-title text-dark">Profil</span>
+                <span class="menu-title text-dark">Profile</span>
                 <i class="fa fa-user menu-icon"></i>
             </router-link>
-        </li>
+        </li> --}}
 
         <li class="nav-item d-md-none d-sm-block">
             <form action=" {{route('logout')}} " method="POST" class="nav-link">

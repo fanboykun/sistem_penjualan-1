@@ -4,7 +4,7 @@ import public_router from './public-router';
 Vue.use(VueRouter);
 
 let routes=[
-	{ path: '/index-user', component: require('../../../vue-views/onlogin/index/user/index.vue').default },
+	// { path: '/index-user', component: require('../../../vue-views/onlogin/index/user/index.vue').default },
 	{ path: '/index-produk', component: require('../../../vue-views/onlogin/index/produk/index.vue').default },
 	{ path: '/index-kategori', component: require('../../../vue-views/onlogin/index/kategori/index.vue').default },
 ]
