@@ -15,6 +15,7 @@ export default class catching {
         })
 
         if (e.response.status == 422) {
+            window.btn_kelola(false)
             Toast.fire({
                 title: 'Kesalahan Validasi ..',
                 icon: 'warning',
@@ -22,6 +23,7 @@ export default class catching {
         }
 
         if (e.response.status == 401) {
+            window.btn_kelola(false)
             Toast.fire({
                 title: 'Sesi Login Kadaluarsa ..',
                 icon: 'warning',
@@ -31,6 +33,7 @@ export default class catching {
         }
 
         if (e.response.status == 400) {
+            window.btn_kelola(false)
             Swal.fire({
                 title: 'Kesalahan Validasi ..',
                 icon: 'warning',
@@ -38,6 +41,7 @@ export default class catching {
             })
         }
         if (e.response.status == 404) {
+            window.btn_kelola(false)
             Toast.fire({
                 title: 'Data Tidak Ditemukan ..',
                 icon: 'warning',
@@ -45,6 +49,7 @@ export default class catching {
             router.push('/404')
         }
         if (e.response.status == 500) {
+            window.btn_kelola(false)
             Toast.fire({
                 title: 'Terjadi Kesalahan Server ..',
                 icon: 'warning',

@@ -255,7 +255,7 @@
                     </div>
                 </div>
                 <div class="container">
-                    <button type="submit" class="btn btn-primary btn-block">
+                    <button type="submit" class="btn btn-primary btn-block btn-submit-data">
                         <i class="fa fa-plus-circle mr-2"></i> Simpan
                     </button>
                 </div>
@@ -359,10 +359,10 @@ export default {
             this.$toast.df102();
             this.form.post('/api/index-produk')
                 .then(() => {
-                    this.$toast.df200();
                     this.form.reset();
                     this.$modal.hide('kelola_produk');
                     this.load();
+                    this.$toast.df200();
                 })
                 .catch((e) => {
                     this.$error.catch(e);
@@ -372,10 +372,10 @@ export default {
             this.$toast.df102();
             this.form.put('/api/index-produk/'+this.kd_produk)
                 .then(() => {
-                    this.$toast.df200();
                     this.form.reset();
                     this.$modal.hide('kelola_produk');
                     this.load();
+                    this.$toast.df200();
                 })
                 .catch((e) => {
                     this.$error.catch(e);
@@ -389,15 +389,13 @@ export default {
                 axs=this.form_terpilih.delete('/api/index-produk/'+produk);
             }
             axs.then(()=>{
-                this.$toast.df200();
                 this.load();
+                this.$toast.df200();
             })
             .catch((e)=>{
                 this.$error.catch(e);
             })
         },
-
-        // paginateion : laravel-vue-pagination
         getResults(page = 1) {
             let kategori;
             if (this.modeFilter) {
@@ -405,7 +403,6 @@ export default {
             }else{
                 kategori=''
             }
-            // let kategori=this.$router.currentRoute.fullPath.split('/')[1].split('?')[1] || '';
             axios.get('/api/index-produk?page='+page+'&kategori='+kategori)
                 .then(response => {
                     this.varProduk = response.data.varProduk;
@@ -505,7 +502,6 @@ export default {
             }
 
         },
-
     },
 }
 

@@ -20,7 +20,7 @@ class produkRepos  extends  rootConfig
 			$varProduk->whereIn('fk_kd_kategori',$this->filterByKategori($request));
 		}
 
-		return $varProduk->paginate(2);
+		return $varProduk->paginate(10);
     }
 
     public function tambahProduk($request)

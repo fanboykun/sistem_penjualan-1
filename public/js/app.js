@@ -2884,13 +2884,13 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$toast.df102();
       this.form.post('/api/index-produk').then(function () {
-        _this3.$toast.df200();
-
         _this3.form.reset();
 
         _this3.$modal.hide('kelola_produk');
 
         _this3.load();
+
+        _this3.$toast.df200();
       })["catch"](function (e) {
         _this3.$error["catch"](e);
       });
@@ -2900,13 +2900,13 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$toast.df102();
       this.form.put('/api/index-produk/' + this.kd_produk).then(function () {
-        _this4.$toast.df200();
-
         _this4.form.reset();
 
         _this4.$modal.hide('kelola_produk');
 
         _this4.load();
+
+        _this4.$toast.df200();
       })["catch"](function (e) {
         _this4.$error["catch"](e);
       });
@@ -2923,14 +2923,13 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       axs.then(function () {
-        _this5.$toast.df200();
-
         _this5.load();
+
+        _this5.$toast.df200();
       })["catch"](function (e) {
         _this5.$error["catch"](e);
       });
     },
-    // paginateion : laravel-vue-pagination
     getResults: function getResults() {
       var _this6 = this;
 
@@ -2941,8 +2940,7 @@ __webpack_require__.r(__webpack_exports__);
         kategori = this.filter;
       } else {
         kategori = '';
-      } // let kategori=this.$router.currentRoute.fullPath.split('/')[1].split('?')[1] || '';
-
+      }
 
       axios.get('/api/index-produk?page=' + page + '&kategori=' + kategori).then(function (response) {
         _this6.varProduk = response.data.varProduk;
@@ -70417,7 +70415,7 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-primary btn-block",
+                    staticClass: "btn btn-primary btn-block btn-submit-data",
                     attrs: { type: "submit" }
                   },
                   [
@@ -89162,6 +89160,11 @@ __webpack_require__(/*! ./kostum/kostum */ "./resources/js/kostum/kostum.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.nv = new Vue();
+
+window.btn_kelola = function (bol) {
+  $('.btn-submit-data').attr('disabled', bol);
+};
+
 Vue.prototype.$akses = new _kostum_akses__WEBPACK_IMPORTED_MODULE_2__["default"](window.user);
 Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a, {
   dynamicDefault: {
@@ -89571,6 +89574,7 @@ var catching = /*#__PURE__*/function () {
       });
 
       if (e.response.status == 422) {
+        window.btn_kelola(false);
         Toast.fire({
           title: 'Kesalahan Validasi ..',
           icon: 'warning'
@@ -89578,6 +89582,7 @@ var catching = /*#__PURE__*/function () {
       }
 
       if (e.response.status == 401) {
+        window.btn_kelola(false);
         Toast.fire({
           title: 'Sesi Login Kadaluarsa ..',
           icon: 'warning'
@@ -89587,6 +89592,7 @@ var catching = /*#__PURE__*/function () {
       }
 
       if (e.response.status == 400) {
+        window.btn_kelola(false);
         Swal.fire({
           title: 'Kesalahan Validasi ..',
           icon: 'warning',
@@ -89595,6 +89601,7 @@ var catching = /*#__PURE__*/function () {
       }
 
       if (e.response.status == 404) {
+        window.btn_kelola(false);
         Toast.fire({
           title: 'Data Tidak Ditemukan ..',
           icon: 'warning'
@@ -89603,6 +89610,7 @@ var catching = /*#__PURE__*/function () {
       }
 
       if (e.response.status == 500) {
+        window.btn_kelola(false);
         Toast.fire({
           title: 'Terjadi Kesalahan Server ..',
           icon: 'warning'
@@ -89673,6 +89681,7 @@ var entahNamaDariClassKurangPenting = /*#__PURE__*/function () {
   _createClass(entahNamaDariClassKurangPenting, [{
     key: "df102",
     value: function df102() {
+      window.btn_kelola(true);
       sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
         title: 'Dalam Proses .. ',
         icon: 'info',
@@ -89686,6 +89695,7 @@ var entahNamaDariClassKurangPenting = /*#__PURE__*/function () {
   }, {
     key: "df200",
     value: function df200() {
+      window.btn_kelola(false);
       sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
         title: 'Proses Berhasil .. ',
         icon: 'success',
@@ -89699,6 +89709,7 @@ var entahNamaDariClassKurangPenting = /*#__PURE__*/function () {
   }, {
     key: "df500",
     value: function df500() {
+      window.btn_kelola(false);
       sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
         title: 'Terjadi Kelas Server .. ',
         icon: 'warning',

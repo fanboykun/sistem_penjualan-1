@@ -2,6 +2,7 @@ import Swal from 'sweetalert2'
 
 export default class entahNamaDariClassKurangPenting {
     df102() {
+        window.btn_kelola(true)
         Swal.mixin({
             title: 'Dalam Proses .. ',
             icon: 'info',
@@ -14,6 +15,7 @@ export default class entahNamaDariClassKurangPenting {
     }
 
     df200() {
+        window.btn_kelola(false)
         Swal.mixin({
             title: 'Proses Berhasil .. ',
             icon: 'success',
@@ -26,6 +28,7 @@ export default class entahNamaDariClassKurangPenting {
     }
 
     df500() {
+        window.btn_kelola(false)
         Swal.mixin({
             title: 'Terjadi Kelas Server .. ',
             icon: 'warning',

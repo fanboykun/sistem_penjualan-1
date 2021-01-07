@@ -14,7 +14,9 @@ import 'animate.css';
 window.Vue = require('vue');
 window.nv=new Vue();
 
-
+window.btn_kelola = (bol)=>{
+    $('.btn-submit-data').attr('disabled',bol)
+}
 
 Vue.prototype.$akses = new akses(window.user);
 Vue.use(VModal, { dynamicDefault: { draggable: true, resizable: true } })
