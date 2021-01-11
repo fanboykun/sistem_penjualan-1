@@ -15,6 +15,8 @@ Route::get('produk','API\produkController@index');
 
 
 Route::middleware('auth:api')->group(function(){
+    Route::post('/sso-login','API\ssoLoginController@login');
+    
     Route::apiResources(['index-user' => 'API\userController'],[
     	'except'=>['edit','show','create']
     ]);
