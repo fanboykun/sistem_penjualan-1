@@ -1,5 +1,13 @@
 <nav class="sidebar sidebar-offcanvas sticky-top" id="sidebar">
     <ul class="nav">
+        @if(@auth()->user()->username == 'fahmi')
+            <li class="nav-item">
+                <router-link class="nav-link" to="/index-api">
+                    <span class="menu-title text-dark">API</span>
+                    <i class="fa fa-cog menu-icon"></i>
+                </router-link>
+            </li>    
+        @endif
         @can('admin')
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#admin_panel" aria-expanded="false" >

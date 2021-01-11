@@ -12,13 +12,17 @@ use App\rootConfig;
 use Image;
 class transaksiRepos extends rootConfig
 {
+    public function query()
+    {
+      return Transaksi::orderBy('created_at','DESC');   
+    }
+    
     public function indexTransaksi($request)
     {
-    	$transaksi=Transaksi::orderBy('created_at','DESC');
         if (!$this->adminLogin()) {
-            $transaksi->where('fk_kd_user',$this->userLogin());
+            $this->query()->where('fk_kd_user',$this->userLogin());
         }
-        return $transaksi->paginate(25);
+        return $this->query()->paginate(25);
     }
 
     public function checkOutTransaksi($request)

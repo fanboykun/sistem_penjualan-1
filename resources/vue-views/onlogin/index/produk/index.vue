@@ -226,7 +226,7 @@
                     <div class="form-group">
                         <label for="">Gambar Produk 1</label>
                         
-                        <input type="file" @change="gambar_1"  :class="{'is-invalid':form.errors.has('img_1')}" accept="image/jpeg" class="form-control">
+                        <input type="file" @change="gambar_1"  :class="{'is-invalid':form.errors.has('img_1')}" accept=".jpeg, .jpg" class="form-control">
                         <i class="text-danger small d-block"> {{skalaGambar}} </i>
                         <has-error :form="form" field="img_1"></has-error>
                     </div>
