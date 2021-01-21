@@ -15,7 +15,7 @@
                         <h4 class="font-weight-normal">Total Transaksi
                             <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                         </h4>
-                        <h2>{{toTransaksi}} </h2>
+                        <h2>{{varTransaksi.total}} </h2>
                     </div>
                 </div>
             </div>
@@ -131,9 +131,8 @@
 export default {
     data() {
         return {
-            toTransaksi:'',
-            toPending:'',
-            toUsai:'',
+            toPending:'0',
+            toUsai:'0',
 
             pencarian:'',
             mod_pencarian:false,
@@ -152,6 +151,8 @@ export default {
             axios.get('/api/transaksi')
             .then(({data})=>{
                 this.varTransaksi=data.varTransaksi
+                this.toPending=data.toPending;
+                this.toUsai=data.toUsai;
             })
         }
 

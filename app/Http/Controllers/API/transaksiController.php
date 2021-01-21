@@ -20,7 +20,9 @@ class transaksiController extends Controller
     public function index(Request $request)
     {
         $varTransaksi=$this->transaksi->indexTransaksi($request);
-        return compact('varTransaksi');
+        $toPending=$this->transaksi->indexTransaksi($request)->where('status',0)->count();
+        $toUsai=$this->transaksi->indexTransaksi($request)->where('status',3)->count();
+        return compact('varTransaksi','toPending','toUsai');
     }
 
     public function create()

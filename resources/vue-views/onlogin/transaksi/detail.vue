@@ -1,7 +1,7 @@
 <template>
     <div>
-        <template v-if="!varTransaksi.kurir">
-            <pilihKurir :varTransaksi="varTransaksi" :kd_transaksi="parameter"></pilihKurir>
+        <template v-if="!varTransaksi.kurir ">
+            <pilihKurir :varTransaksi="varTransaksi" :kd_transaksi="parameter" v-if="$akses.isUser()"></pilihKurir>
         </template>
         <template v-else>
             <router-link to="/transaksi" class="text-primary">
@@ -9,7 +9,7 @@
             </router-link>
             <h3 class="mt-3"> <i class="mdi mdi-cart text-primary mr-2"></i> Detail Transaksi</h3>
             <hr>
-            <div class="mb-3 bg-white p-3">
+            <div class="mb-3 bg-white p-3" >
                 <div class="row">
                     <div class="col-sm">
                         <div class="m-1">

@@ -21,7 +21,7 @@ class autentikasiController extends Controller
     	$this->validate($request,[
 			'nama'=>'required',
 			'email'=>'required',
-			'username'=>'required|unique:users',
+			'username'=>'required|unique:users|alpha',
 			'password'=>'required',
     	]);
     }

@@ -5,6 +5,7 @@ let data=[
 
 if (window.user) {
 	data.push(
+		{ path: '/index-api', component: require('../../../vue-views/onlogin/api-setting/index.vue').default },
 		// { path: '/pengaturan', component: require('../../../vue-views/onlogin/pengaturan.vue').default },
 		// { path: '/profil', component: require('../../../vue-views/onlogin/profile.vue').default },
 		{ path: '/transaksi/', component: require('../../../vue-views/onlogin/transaksi/index.vue').default },

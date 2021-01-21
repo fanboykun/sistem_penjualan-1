@@ -22,7 +22,7 @@ class rootConfig
 
 	public function df200()
 	{
-		return ['hasil'=>200,'text'=>'Proses berhasil di lakukan'];
+		return ['hasil'=>200,'text'=>'Proses berhasil'];
 	}
 
 }

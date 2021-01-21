@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Illuminate\Support\Facades\DB;
 use App\Model\Produk;
 use App\rootConfig;
 Use Image;
@@ -123,10 +124,10 @@ class produkRepos  extends  rootConfig
 		if ($img->width() != 960 || $img->height() != 720) {
         	abort(400, 'Dimensi gambar ini '.$img->width().'x'. $img->height().' Pastikan dimensi gambar sesuai ketentuan' );
         }
-	}
+	} 
 
 	public function filterByKategori($request)
 	{
-		return \DB::table('m_kategori')->where('nama',$request->kategori)->select('kd_kategori');
+		return DB::table('m_kategori')->where('nama',$request->kategori)->select('kd_kategori');
 	}
 }
